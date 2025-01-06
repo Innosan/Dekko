@@ -1,118 +1,106 @@
-# Nuxt Template
+# Dekko
 
-This project is a Nuxt 3 application template with TypeScript support. It includes a basic navigation setup and some utility components.
+Dekko is a modular personal dashboard application that allows users to create customizable hubs with widgets tailored to their needs. Designed to boost productivity, well-being, and personal organization, Dekko is the ultimate tool to centralize your life in one place.
 
-# Project Structure
+## Features
 
-This project is a Nuxt 3 application template with TypeScript support. It includes a basic navigation setup, some utility components, and state management using Pinia.
+- **Customizable Hubs**: Create and organize multiple hubs (e.g., Productivity, Well-being, Entertainment) with unique layouts and widgets.
+- **Dynamic Widgets**: Choose from a wide variety of widgets like a mood tracker, task manager, weather display, and more.
+- **Dekko View**: Quickly glance at selected widget information in a compact form at the top of the app.
+- **Plugin System**: Extend the app's functionality by adding custom plugins, with seamless API integration for external services.
+- **User-Friendly Interface**: Clean, responsive design tailored for accessibility and modern aesthetics.
+
+## Getting Started
+
+Follow these steps to set up Deccko locally or deploy it to your platform of choice.
+
+### Prerequisites
+
+- Node.js (v16 or higher)
+- pnpm or yarn
+- A Supabase account (or your preferred backend solution)
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/dekko.git
+   cd deccko
+   ```
+2. Install dependencies:
+   ```bash
+   pnpm install
+   # or
+   yarn install
+   # or
+   npm install
+   ```
+3. Set up environment variables:
+   Create a `.env` file and add the following:
+   ```env
+   NUXT_SUPABASE_URL=<your-supabase-url>
+   NUXT_SUPABASE_KEY=<your-supabase-key>
+   ```
+
+4. Start the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+5. Open your browser and navigate to `http://localhost:3000`.
+
+### Deployment
+
+Dekko can be deployed on platforms like Vercel, Netlify, or any server capable of running a Nuxt app. Refer to the [Nuxt Deployment Guide](https://nuxt.com/docs/get-started/deployment) for more details.
 
 ## Folder Structure
 
-- `assets/`: Contains static assets like stylesheets.
-	- `styles/`: Main styles directory.
-		- `css/`: Contains CSS files.
-		- `scss/`: Contains SCSS files.
-- `components/`: Contains Vue components.
-	- `layout/section/`: Components for layout sections.
-		- `PageSection.vue`: Component for page sections.
-		- `SectionTitle.vue`: Component for section titles.
-	- `navigation/`: Components for navigation.
-		- `BurgerNavigation.vue`: Component for burger menu navigation.
-		- `IconedNavigationLink.vue`: Component for navigation links with icons.
-		- `SidebarNavigation.vue`: Component for sidebar navigation.
-		- `TopNavigation.vue`: Component for top navigation.
-	- `theming/`: Components for theming.
-		- `ColorSwitch.vue`: Component for switching colors.
-		- `ThemeSwitch.vue`: Component for switching themes.
-	- `utility/`: Utility components.
-		- `Header.vue`: Header component.
-- `pages/`: Contains page components.
-	- `about.vue`: About page.
-	- `help.vue`: Help page.
-	- `index.vue`: Home page.
-- `public/`: Contains public assets.
-	- `favicon.ico`: Favicon for the application.
-	- `fonts/`: Contains font files.
-		- `Manrope-VariableFont_wght.ttf`: Manrope font.
-	- `images/`: Contains image files.
-		- `delete.ts`: Example image file.
-- `server/`: Contains server-side code.
-	- `tsconfig.json`: TypeScript configuration for the server.
-- `stores/`: Contains Pinia stores.
-	- `settings.ts`: Store for managing application settings.
-- `types/`: Contains TypeScript type definitions.
-	- `ui/`: UI-related types.
-		- `SectionSizes.ts`: Type definitions for section sizes.
-	- `utility/`: Utility types.
-		- `NavigationLink.ts`: Type definitions for navigation links.
-- `utils/`: Contains utility functions.
-	- `navigation.ts`: Utility functions for navigation.
-
-## Explanation
-
-The project is structured to separate concerns and improve maintainability:
-
-- **Assets**: Static files like stylesheets are organized under `assets` to keep them separate from the application logic.
-- **Components**: Vue components are organized by their functionality (layout, navigation, theming, utility) to make it easier to find and manage them.
-- **Pages**: Each page of the application has its own file under `pages`, following the Nuxt.js convention.
-- **Public**: Public assets like fonts and images are placed under `public` to be served directly.
-- **Server**: Server-side code is kept under `server` to separate it from client-side code.
-- **Stores**: State management is handled using Pinia stores, which are placed under `stores`.
-- **Types**: TypeScript type definitions are organized under `types` to ensure type safety across the application.
-- **Utils**: Utility functions are placed under `utils` for reusability and better organization.
-
-## Stores
-
-### `stores/settings.ts`
-
-This file contains the settings store which manages the application's settings, such as the primary color. It uses Pinia for state management.
-
-## Setup
-
-Make sure to install the dependencies:
-
-```bash
-# npm
-npm install
+```plaintext
+├── components          # UI components and widget implementations
+├── pages               # Nuxt pages
+├── public              # Static assets
+├── styles              # Global and modular CSS files
+├── utils               # Utility functions and helper modules
+├── composables         # Reusable Vue 3 composables
+├── plugins             # Core plugin system logic
+├── .env.example        # Example environment variables file
+├── README.md           # Project documentation
+└── package.json        # Project dependencies and scripts
 ```
 
-```bash
-# pnpm
-pnpm install
-```
+## Contribution Guidelines
 
-```bash
-# yarn
-yarn install
-```
+I'm welcome contributions to make Dekko even better! Here's how you can get involved:
 
-```bash
-# bun
-bun install
-```
+1. Fork the repository.
+2. Create a feature branch (`git checkout -b feature/new-feature`).
+3. Commit your changes (`git commit -m 'Add new feature'`).
+4. Push to the branch (`git push origin feature/new-feature`).
+5. Open a pull request.
 
-## Deployment
+Please ensure your code follows the project's linting and formatting standards.
 
-```bash
-# bun
-bun run dev
-```
+## License
 
-```bash
-# npm
-npm run dev
-```
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
 
-```bash
-# pnpm
-pnpm run dev
-```
+## Acknowledgments
 
-```bash
-# yarn
-yarn dev
-```
+Special thanks to the open-source community for providing the tools and inspiration that made Dekko possible.
 
-Check out the [Deployment guide](https://nuxt.com/docs/getting-started/deployment) for more information.  
-License
-This project is licensed under the MIT License
+---
+
+## Tags
+
+- `#Nuxt`
+- `#Supabase`
+- `#Productivity`
+- `#Dashboard`
+- `#ModularApp`
+- `#Widgets`
+- `#Wellbeing`
+- `#Customizable`
+- `#OpenSource`
+- `#PersonalDevelopment`
