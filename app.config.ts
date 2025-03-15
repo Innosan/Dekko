@@ -1,11 +1,12 @@
 export default defineAppConfig({
-	appName: "Nuxt Template",
+	appName: 'Dekko',
 
 	ui: {
 		colors: {
-			primary: "blue",
-			error: "red",
-			gray: "zinc",
+			primary: 'emerald',
+			error: 'red',
+			gray: 'zinc',
+			neutral: 'zinc',
 		},
 	},
 });

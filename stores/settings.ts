@@ -1,9 +1,9 @@
 import { persistOptions } from '~/utils/persistence';
 
 export const useSettingsStore = defineStore(
-	'settings-store',
+	'dekko-settings-store',
 	() => {
-		const primaryColor = ref('violet');
+		const primaryColor = ref('emerald');
 		const grayColor = ref('zinc');
 
 		const setPrimaryColor = (color: string) => {

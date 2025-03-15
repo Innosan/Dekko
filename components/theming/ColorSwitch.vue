@@ -23,10 +23,10 @@ const colors = [
 		},
 	},
 	{
-		label: 'Green',
-		className: 'decoration-green-400',
+		label: 'Emerald',
+		className: 'decoration-emerald-400',
 		onSelect: () => {
-			changeTheme('green');
+			changeTheme('emerald');
 		},
 	},
 	{
@@ -41,7 +41,12 @@ const colors = [
 
 <template>
 	<UDropdownMenu :items="colors">
-		<UButton icon="i-heroicons-paint-brush-solid" />
+		<UButton
+			icon="i-heroicons-paint-brush-solid"
+			variant="subtle"
+			color="primary"
+			:label="$t('buttons.change-theme')"
+		/>
 
 		<template #item-label="{ item }">
 			<p

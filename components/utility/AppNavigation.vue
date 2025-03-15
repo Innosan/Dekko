@@ -7,54 +7,90 @@ const props = defineProps({
 });
 
 const { t } = useI18n();
+const { user, signOut } = useAuth();
 
-const links = computed(() => [
+const pages = computed(() => [
 	{
 		id: 1,
-		to: '/',
-		label: t('navigation.home'),
-		icon: 'i-heroicons-home-solid',
+		to: '/hub',
+		label: t('navigation.hub'),
+		icon: 'i-heroicons-squares-2x2-solid',
 	},
 	{
 		id: 2,
-		to: '/contact',
-		label: t('navigation.contact'),
-		icon: 'i-heroicons-envelope-solid',
+		to: '/profile',
+		label: t('navigation.profile'),
+		icon: 'i-heroicons-user-solid',
 	},
 	{
 		id: 3,
-		to: '/settings',
-		label: t('navigation.settings'),
-		icon: 'i-heroicons-cog-6-tooth-solid',
+		to: '/guide',
+		label: t('navigation.guide'),
+		icon: 'i-heroicons-book-open-solid',
+	},
+]);
+
+const misc = computed(() => [
+	{
+		id: 1,
+		to: 'https://github.com/Innosan/Dekko',
+		label: 'Contribute',
+		icon: 'i-lucide-github',
+	},
+	{
+		id: 2,
+		to: 'https://docs.dekko.com/',
+		label: 'Documentation',
+		icon: 'i-lucide-file-code',
 	},
 ]);
 </script>
 
 <template>
-	<div class="md:block hidden">
-		<UNavigationMenu
-			orientation="horizontal"
-			:items="links"
+	<USlideover
+		:title="title"
+		:overlay="false"
+		:description="$t('navigation.description', { name: user?.email })"
+	>
+		<UButton
+			icon="i-heroicons-bars-3"
+			color="primary"
+			variant="subtle"
 		/>
-	</div>
 
-	<div class="md:hidden block">
-		<USlideover
-			:title="title"
-			description="Navigation"
-		>
-			<UButton
-				icon="i-heroicons-bars-3"
-				color="primary"
-				variant="subtle"
-			/>
+		<template #body>
+			<div class="flex flex-col gap-6">
+				<div class="flex flex-col gap-3">
+					<UNavigationMenu
+						orientation="vertical"
+						:items="pages"
+					/>
 
-			<template #body>
+					<UButton
+						@click="signOut"
+						icon="i-heroicons-arrow-right-on-rectangle-solid"
+						variant="ghost"
+						color="error"
+						class="hover:underline"
+						>{{ $t('auth.logout') }}
+					</UButton>
+				</div>
+
+				<USeparator :label="$t('labels.theming')" />
+
+				<div class="grid grid-cols-2 gap-4">
+					<LanguageSwitcher />
+
+					<ColorSwitch />
+				</div>
+
+				<USeparator :label="$t('labels.misc')" />
+
 				<UNavigationMenu
 					orientation="vertical"
-					:items="links"
+					:items="misc"
 				/>
-			</template>
-		</USlideover>
-	</div>
+			</div>
+		</template>
+	</USlideover>
 </template>

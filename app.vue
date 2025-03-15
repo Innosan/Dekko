@@ -4,6 +4,10 @@ import { useSettingsStore } from '~/stores/settings';
 
 const { locale } = useI18n();
 const appConfig = useAppConfig();
+const { isAuthed } = useAuth();
+
+const currentLayout = computed(() => (isAuthed.value ? 'authed' : 'unauthed'));
+
 const settingsStore = useSettingsStore();
 
 appConfig.ui.colors.primary = settingsStore.primaryColor;
@@ -24,15 +28,8 @@ useHead({
 		:toaster="{ position: 'bottom-right' }"
 		:locale="locales[locale]"
 	>
-		<AppHeader />
-
-		<div class="page-container pt-6">
+		<NuxtLayout :name="currentLayout">
 			<NuxtPage />
-		</div>
+		</NuxtLayout>
 	</UApp>
 </template>
-
-<style>
-@import 'tailwindcss';
-@import '@nuxt/ui';
-</style>

@@ -14,8 +14,9 @@ const items = ref([
 	>
 		<UButton
 			icon="i-heroicons-language-20-solid"
-			variant="subtle"
+			variant="solid"
 			color="primary"
+			:label="$t('buttons.change-language')"
 		/>
 
 		<template #item="{ item }">

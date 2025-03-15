@@ -24,7 +24,7 @@ const props = defineProps({
 
 <template>
 	<section
-		class="flex flex-col"
+		class="flex flex-col p-8"
 		:class="size.sectionSpacing"
 	>
 		<SectionTitle

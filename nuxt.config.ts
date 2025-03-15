@@ -1,12 +1,14 @@
 export default defineNuxtConfig({
 	modules: [
 		'@nuxt/ui',
-		'@formkit/auto-animate/nuxt',
+		'@nuxt/image',
 		'@pinia/nuxt',
 		'@pinia-plugin-persistedstate/nuxt',
-		'@nuxt/eslint',
+		'@nuxtjs/supabase',
 		'@nuxtjs/i18n',
-		'@nuxt/image', // Delete this line if you don't need it (and from package.json)
+		'@formkit/auto-animate/nuxt',
+		'@vueuse/nuxt',
+		'@hypernym/nuxt-gsap',
 	],
 
 	components: [
@@ -15,43 +17,36 @@ export default defineNuxtConfig({
 			pathPrefix: false,
 		},
 	],
-	devtools: { enabled: true },
 
+	devtools: { enabled: true },
 	css: ['~/assets/styles/main.css'],
 
 	ui: {
 		theme: {
-			colors: ['cerise', 'blue', 'green'],
-		},
-	},
-
-	eslint: {
-		config: {
-			stylistic: {
-				indent: 'tab',
-				semi: true,
-			},
+			colors: ['cerise', 'blue', 'green', 'error'],
 		},
 	},
 
 	i18n: {
 		strategy: 'no_prefix',
-		defaultLocale: 'ru',
+		defaultLocale: 'en',
 		locales: [
-			{
-				code: 'ru',
-				file: '/locales/ru.json',
-				name: 'Русский',
-			},
 			{
 				code: 'en',
 				file: '/locales/en.json',
 				name: 'English',
 			},
+			{
+				code: 'ru',
+				file: '/locales/ru.json',
+				name: 'Русский',
+			},
 		],
 	},
 
-	image: {
-		domains: ['nekos.best'],
+	supabase: {
+		redirect: false,
 	},
+
+	compatibilityDate: '2025-01-10',
 });

@@ -1,6 +1,6 @@
 html {
 	width: 100%;
-	padding: 30px 0;
+	padding: .5rem 0;
 	height: 100%;
 	overflow-y: overlay;
 	overflow-x: hidden;
@@ -8,7 +8,7 @@ html {
 }
 
 html.dark {
-	background-color: var(--color-gray-900) !important;
+	background-color: var(--color-zinc-900) !important;
 }
 
 html.light {

@@ -3,8 +3,50 @@
 		"main": "Welcome to the homepage"
 	},
 	"navigation": {
-		"home": "Home",
-		"contact": "Contact",
-		"settings": "Settings"
+		"hub": "Hub",
+		"profile": "Profile",
+		"guide": "Guide",
+		"description": "Logged in as {name}"
+	},
+	"validation": {
+		"required": "This field is required",
+		"email": "Please enter a valid email address",
+		"password": "Password must be at least 12 characters long"
+	},
+	"auth": {
+		"sign": {
+			"label": "Sign in",
+			"description": "Login to your existing account."
+		},
+		"new": {
+			"label": "Create new account",
+			"description": "Create a new account to access the platform's features."
+		},
+		"inputs": {
+			"email": "Email",
+			"password": "Password",
+			"confirmPassword": "Confirm password"
+		},
+		"logout": "Logout"
+	},
+	"buttons": {
+		"submit": "Submit",
+		"cancel": "Cancel",
+		"continue": "Continue",
+		"back": "Back",
+		"change-theme": "Change theme",
+		"change-language": "Change language"
+	},
+	"labels": {
+		"theming": "Theming",
+		"misc": "Miscellaneous"
+	},
+	"widgets": {
+		"weather": {
+			"title": "Weather",
+			"temperature": "Temperature",
+			"humidity": "Humidity",
+			"wind": "Wind"
+		}
 	}
 }
