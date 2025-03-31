@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import WidgetContainer from '~/components/widgets/WidgetContainer.vue';
+
 definePageMeta({
 	title: 'Home',
 	heading: 'Home',
@@ -13,6 +15,6 @@ definePageMeta({
 		icon="i-heroicons-home-solid"
 		:is-divided="false"
 	>
-		<Better />
+		<WidgetContainer />
 	</PageSection>
 </template>

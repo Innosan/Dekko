@@ -6,6 +6,7 @@
 		"hub": "Hub",
 		"profile": "Profile",
 		"guide": "Guide",
+		"settings": "Settings",
 		"description": "Logged in as {name}"
 	},
 	"validation": {

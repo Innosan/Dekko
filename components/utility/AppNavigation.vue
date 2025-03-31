@@ -10,24 +10,34 @@ const { t } = useI18n();
 const { user, signOut } = useAuth();
 
 const pages = computed(() => [
-	{
-		id: 1,
-		to: '/hub',
-		label: t('navigation.hub'),
-		icon: 'i-heroicons-squares-2x2-solid',
-	},
-	{
-		id: 2,
-		to: '/profile',
-		label: t('navigation.profile'),
-		icon: 'i-heroicons-user-solid',
-	},
-	{
-		id: 3,
-		to: '/guide',
-		label: t('navigation.guide'),
-		icon: 'i-heroicons-book-open-solid',
-	},
+	[
+		{
+			id: 1,
+			to: '/hub',
+			label: t('navigation.hub'),
+			icon: 'i-heroicons-squares-2x2-solid',
+		},
+		{
+			id: 2,
+			to: '/profile',
+			label: t('navigation.profile'),
+			icon: 'i-heroicons-user-solid',
+		},
+		{
+			id: 3,
+			to: '/guide',
+			label: t('navigation.guide'),
+			icon: 'i-heroicons-book-open-solid',
+		},
+	],
+	[
+		{
+			id: 4,
+			to: '/settings',
+			label: t('navigation.settings'),
+			icon: 'i-heroicons-cog-6-tooth-solid',
+		},
+	],
 ]);
 
 const misc = computed(() => [

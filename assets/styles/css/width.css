@@ -1,5 +1,5 @@
-header, footer div, .page-container {
-	width: 90vw;
+header, footer div, .page-container, section {
+	width: 95vw;
 	margin: 0 auto;
 }
 

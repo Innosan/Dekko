@@ -6,6 +6,7 @@
 		"hub": "Хаб",
 		"profile": "Профиль",
 		"guide": "Руководство",
+		"settings": "Настройки",
 		"description": "Вошли как {name}"
 	},
 	"validation": {

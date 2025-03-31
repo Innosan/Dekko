@@ -33,10 +33,20 @@ const bankValueActions = [
 
 const isCustomBankValue = ref(false);
 const customBankValue = ref(100);
+
+const props = defineProps({
+	compact: {
+		type: Boolean,
+		default: false,
+	},
+});
 </script>
 
 <template>
-	<div class="flex gap-2">
+	<div
+		class="flex gap-2"
+		v-if="!compact"
+	>
 		<template
 			v-for="action in bankValueActions"
 			:key="action.label"
@@ -89,5 +99,22 @@ const customBankValue = ref(100);
 				/>
 			</UButtonGroup>
 		</div>
+	</div>
+	<div
+		class="flex gap-2"
+		v-else
+	>
+		<template
+			v-for="action in bankValueActions"
+			:key="action.label"
+		>
+			<UButton
+				@click="action.action"
+				size="xs"
+				variant="subtle"
+				:color="action.color"
+				:label="action.label"
+			/>
+		</template>
 	</div>
 </template>

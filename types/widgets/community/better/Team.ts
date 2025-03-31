@@ -34,7 +34,7 @@ export const defaultTeam: Team = {
 	suggestedBet: {
 		title: 'Suggested Bet',
 		value: 100,
-		sign: '$',
+		sign: '₽',
 		fraction: 2,
 		icon: 'dollar-sign',
 		description: 'The amount of money to bet.',
@@ -42,7 +42,7 @@ export const defaultTeam: Team = {
 	expectedProfit: {
 		title: 'Expected Profit',
 		value: 100,
-		sign: '$',
+		sign: '₽',
 		fraction: 2,
 		icon: 'dollar-sign',
 		description: 'The amount of money to win.',
